@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ServerImagesActivity">
+
+    <Spinner
+        android:id="@+id/spinnerImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/buttonGetImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Obtener Imagen"
+        android:layout_below="@id/spinnerImages"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/buttonViewImages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver a la captura de imágenes"
+        android:layout_below="@id/buttonGetImage"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@id/buttonViewImages"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitCenter"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

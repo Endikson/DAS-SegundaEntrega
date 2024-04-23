@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".ViewImagesActivity">
+
+    <Button
+        android:id="@+id/buttonCaptureImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Capturar Imagen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <ImageView
+        android:id="@+id/imageViewCapturedImage"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@id/buttonCaptureImage"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitCenter"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/buttonShowServerImages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mostrar imágenes del servidor"
+        android:layout_below="@id/imageViewCapturedImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:onClick="showServerImages"/>
+
+    <Button
+        android:id="@+id/buttonBackToWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver al inicio"
+        android:layout_below="@id/buttonShowServerImages"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:onClick="backToWelcomeActivity"/>
+
+</RelativeLayout>

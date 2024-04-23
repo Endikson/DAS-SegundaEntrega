@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "721773861763",
+    "project_id": "segunda-entrega-33509",
+    "storage_bucket": "segunda-entrega-33509.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721773861763:android:b85059ecd5a1d39badb4b6",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1DaMjUuZNHXXvHZudmkpZojVkUXKiftg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

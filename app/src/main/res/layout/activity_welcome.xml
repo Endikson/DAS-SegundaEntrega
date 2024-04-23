@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".WelcomeActivity">
+
+    <TextView
+        android:id="@+id/textViewWelcomeMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:text="Hola, Usuario" />
+
+    <Button
+        android:id="@+id/buttonViewImages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver Imágenes"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
+
+    <!-- Botón para opciones de administrador -->
+    <Button
+        android:id="@+id/buttonAdminOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opciones de Administrador"
+        android:layout_marginTop="32dp"
+        android:visibility="gone"/> <!-- Invisible por defecto -->
+
+</LinearLayout>

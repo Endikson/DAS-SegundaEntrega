@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Campo de texto para ingresar el nombre de usuario a eliminar -->
+    <EditText
+        android:id="@+id/editTxtUsernameToDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username para eliminar o modificar"
+        android:inputType="text" />
+
+    <!-- Campos de texto para ingresar los nuevos datos de usuario -->
+    <EditText
+        android:id="@+id/editTextNewEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nuevo correo electrónico"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextNewUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nuevo nombre de usuario"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextNewPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nueva contraseña"
+        android:inputType="textPassword" />
+
+    <!-- Botones para realizar acciones -->
+    <Button
+        android:id="@+id/buttonDeleteUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eliminar usuario" />
+
+    <Button
+        android:id="@+id/buttonModifyUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modificar usuario" />
+
+    <Button
+        android:id="@+id/buttonAddUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Añadir usuario" />
+
+    <Button
+        android:id="@+id/buttonBackToWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver al inicio" />
+
+
+</LinearLayout>
