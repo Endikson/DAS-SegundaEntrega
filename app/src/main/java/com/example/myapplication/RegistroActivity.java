@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,7 +44,19 @@ public class RegistroActivity extends AppCompatActivity {
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonRegister = findViewById(R.id.buttonRegister);
-        buttonBackToLogin = findViewById(R.id.buttonBackToLogin);
+        TextView textViewLogin = findViewById(R.id.textViewLogin);
+        textViewLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Crear un intent para iniciar LoginActivity
+                Intent intent = new Intent(RegistroActivity.this, LoginActivity.class);
+                // Iniciar LoginActivity
+                startActivity(intent);
+                // Finalizar RegistroActivity para que no se quede en la pila de actividades
+                finish();
+            }
+        });
+
 
         // Inicializar la cola de solicitudes HTTP
         requestQueue = Volley.newRequestQueue(this);
@@ -55,19 +68,6 @@ public class RegistroActivity extends AppCompatActivity {
                 registerUser();
             }
         });
-
-        // Configurar el listener del botón de volver al inicio de sesión
-        buttonBackToLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Crear un intent para iniciar LoginActivity
-                Intent intent = new Intent(RegistroActivity.this, LoginActivity.class);
-                // Iniciar LoginActivity
-                startActivity(intent);
-                // Finalizar RegistroActivity para que no se quede en la pila de actividades
-                finish();
-            }
-        });
     }
 
     private void registerUser() {
@@ -77,6 +77,13 @@ public class RegistroActivity extends AppCompatActivity {
         String email = editTextEmail.getText().toString().trim();
         String username = editTextUsername.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
+
+        // Comprobar si los campos están vacíos
+        if (email.isEmpty() || username.isEmpty() || password.isEmpty()) {
+            Toast.makeText(RegistroActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+            buttonRegister.setEnabled(true); // Habilitar el botón nuevamente
+            return;
+        }
 
         // Validar el formato del correo electrónico
         if (!isValidEmail(email)) {

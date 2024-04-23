@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +22,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         // Mostrar el nombre de usuario en un TextView
         TextView textViewWelcomeMessage = findViewById(R.id.textViewWelcomeMessage);
-        textViewWelcomeMessage.setText("Hola, " + username);
+        textViewWelcomeMessage.setText("Hola, " + username + ". Bienvenido a la aplicación de ver y capturar imágenes");
 
         // Obtener una referencia al botón
         Button buttonViewImages = findViewById(R.id.buttonViewImages);
@@ -33,6 +34,17 @@ public class WelcomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Abrir la actividad para ver las imágenes
                 Intent intent = new Intent(WelcomeActivity.this, ViewImagesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button buttonOpenCalendar = findViewById(R.id.buttonOpenCalendar);
+        buttonOpenCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Abrir el calendario de Google
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("content://com.android.calendar/time"));
                 startActivity(intent);
             }
         });

@@ -134,6 +134,12 @@ public class AdminOptionsActivity extends AppCompatActivity {
             return; // Salir del método si algún campo está vacío
         }
 
+        // Verificar el formato del correo electrónico
+        if (!isValidEmail(newEmail)) {
+            Toast.makeText(AdminOptionsActivity.this, "Formato de correo electrónico inválido", Toast.LENGTH_SHORT).show();
+            return; // Salir del método si el formato del correo electrónico es inválido
+        }
+
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("newEmail", newEmail);
@@ -173,9 +179,16 @@ public class AdminOptionsActivity extends AppCompatActivity {
     }
 
     private void addUser(String email, String username, String password) {
+        // Verificar si algún campo está vacío
         if (email.isEmpty() || username.isEmpty() || password.isEmpty()) {
             Toast.makeText(AdminOptionsActivity.this, "Por favor rellena los campos necesarios", Toast.LENGTH_SHORT).show();
             return; // Salir del método si algún campo está vacío
+        }
+
+        // Verificar el formato del correo electrónico
+        if (!isValidEmail(email)) {
+            Toast.makeText(AdminOptionsActivity.this, "Formato de correo electrónico inválido", Toast.LENGTH_SHORT).show();
+            return; // Salir del método si el formato del correo electrónico es inválido
         }
 
         JSONObject jsonObject = new JSONObject();
@@ -213,5 +226,11 @@ public class AdminOptionsActivity extends AppCompatActivity {
         );
 
         requestQueue.add(jsonObjectRequest);
+    }
+
+    // Método para verificar el formato del correo electrónico utilizando una expresión regular
+    private boolean isValidEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        return email.matches(emailRegex);
     }
 }

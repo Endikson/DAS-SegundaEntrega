@@ -12,9 +12,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Inicializar el SDK de FCM
-        FirebaseMessaging.getInstance().setAutoInitEnabled(true);
-
         setContentView(R.layout.activity_main);
 
         // Iniciar la actividad de inicio de sesión

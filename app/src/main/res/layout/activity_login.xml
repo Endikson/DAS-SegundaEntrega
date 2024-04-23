@@ -7,6 +7,16 @@
     android:gravity="center"
     tools:context=".LoginActivity">
 
+    <TextView
+        android:id="@+id/textViewWelcomeMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Bienvenido! Por favor, inicia sesión para acceder."
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="24dp"
+        android:textStyle="bold"/>
+
     <EditText
         android:id="@+id/editTextUsername"
         android:layout_width="match_parent"
@@ -32,11 +42,12 @@
         android:layout_height="wrap_content"
         android:text="Iniciar sesión" />
 
-    <Button
-        android:id="@+id/buttonRegistro"
+    <TextView
+        android:id="@+id/textViewSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registrarse"
-        android:onClick="irARegistro" />
+        android:text="¿No tienes cuenta? Regístrate"
+        android:textColor="@color/colorAccent"
+        android:layout_marginTop="16dp" />
 
 </LinearLayout>
